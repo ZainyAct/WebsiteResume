@@ -1,0 +1,183 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Default background if image fails to load */
+}
+
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+header, footer {
+    background-color: #222;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    size: 150%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #333;
+}
+
+h2, h3 {
+    text-align: center;
+    size: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #333;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    font-size: 120%;
+    margin: 5px 0;
+}
+
+header, footer {
+    text-align: center;
+    padding: 20px;
+}
+
+@media(max-width:500px){
+    .container{
+        padding: 10px;
+    }
+}
+.sidebar {
+    position: absolute;
+    top: 80vh; /* Or the height of your background image */
+    left: 0;
+    width: 200px; /* Adjust width as necessary */
+    height: 100%;
+    background-color: #106fdb;
+    color: white;
+    padding: 15px;
+    z-index: 1000;
+    transition: top 0.3s; /* Smooth transition for top value */
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center; /* Center align the list */
+}
+
+.sidebar nav ul li {
+    padding: 10px 0; /* Add vertical padding */
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: inline-block; /* Makes the anchor inline-block to enable padding */
+    padding: 10px 20px; /* Horizontal and vertical padding */
+}
+
+.container {
+    margin-left: 100px; /* Adjusted to make room for the sidebar */
+    padding: 50px;
+}
+
+@media(max-width:500px) {
+    .container {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.background-image {
+    width: 100%;
+    height: 80vh;
+    background-size: 180%;
+    background-image: url("./pictures/indexfront.jpg"); 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: white; /* Ensures text is readable on likely dark image */
+    text-align: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+margin: 0;
+border: 0;
+padding: 0;
+}
+
+#canvas {
+height: 2800px;
+position: relative;
+border-left: 2px dashed black;
+border-right: 2px dashed black;
+margin-left: auto;
+margin-right: auto;
+img {
+    width: 500px;
+}
+}
+
+.splotch {
+position: absolute;
+transform: translate(-50%, -50%);
+opacity: 0;
+margin-top: 400px;
+
+}
+
+#red {
+top: 200px;
+left: 25%;
+}
+
+#blue {
+top: 500px;
+left: 75%;
+}
+
+#yellow {
+top: 800px;
+transform: translate(-50%, -50%) scaleX(-1);
+left: 25%;
+}
+
+#pink {
+top: 1100px;
+left: 75%;
+}
+
+#black {
+top: 1400px;
+left: 25%;
+}
+
+
