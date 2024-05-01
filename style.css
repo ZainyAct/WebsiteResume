@@ -20,7 +20,7 @@ body {
     color: white;
     text-align: center;
     padding: 20px;
-    z-index: 2; /* Positioned above normal content but below fixed elements */
+    z-index: 5; /* Positioned above normal content but below fixed elements */
 }
 
 /* Sidebar styling */
@@ -35,7 +35,7 @@ body {
     color: white;        
     padding: 15px;       
     z-index: 1000;  
-    margin-left: -150px;     
+    margin-left: -400px;     
 }
 
 
@@ -114,7 +114,7 @@ header, footer {
 
 #canvas img {
     width: 100%; /* Responsive width */
-    max-width: 500px; /* Maximum width */
+    max-width: 1000px; /* Maximum width */
 }
 
 /* Styles for dynamically created splotches */
@@ -125,7 +125,7 @@ header, footer {
 }
 
 #red {
-    top: 200px;
+    top: 350px;
     left: 25%;
 }
 
@@ -150,4 +150,46 @@ header, footer {
     left: 25%;
 }
 
+#red2 {
+    top: 1700px;
+    left: 25%;
+}
+
+#blue2 {
+    top: 2000px;
+    left: 75%;
+}
+
+#yellow2 {
+    top: 2300px;
+    transform: translate(-50%, -50%) scaleX(-1);
+    left: 25%;
+}
+
+#pink2 {
+    top: 2600px;
+    left: 75%;
+}
+
+#black2 {
+    top: 2800px;
+    left: 25%;
+}
+
+.mainsec h2 {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
+
+.mainsec h3 {
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.mainsec p {
+    font-size: 15px;
+    text-align: center;
+}
 
