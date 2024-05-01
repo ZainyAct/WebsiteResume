@@ -3,30 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - About Me</title>
+    <title>Zain's Website Resume</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
     <div class="background-image" id="background-image">
         <h1><b>Hi. I'm Zain.</b></h1>
         <h2>2A Mechatronics Engineer at the University of Waterloo</h2>
         <h3>Electromechanical Technologist, PCB Designer, Machinist, CAD Developer, Python Programmer</h3>
         <h3>You Name It.</h3>
     </div>
-
-    <div class="sidebar">
-        <nav>
-            <ul>
-                <li><a href="#about-me">About Me</a></li>
-                <li><a href="#projects">Personal Projects</a></li>
-                <li><a href="#work">Work Experience</a></li>
-            </ul>
-        </nav>
-    </div>
-
-
+    
     <div id="canvas" class="container">
         <img id="red" class="splotch" src="https://i.ibb.co/fpW25qW/k-T85j4e-Rc.png"/>
         <img id="blue" class="splotch" src="https://i.ibb.co/Brw1B69/8-TGb-Xexzc.png" />
@@ -34,75 +23,169 @@
         <img id="pink" class="splotch" src="https://i.ibb.co/fGj59kP/1079553.png"/>
         <img id="black" class="splotch" src="https://i.ibb.co/QPz04gJ/paint-splatter-transparent-background-6.png"/>
 
-    <div class="container" id="about-me">
-        <section>
-            <h2>About Me</h2>
-            <p>I am an engineering student with a passion for energy efficiency and sustainability. My academic and professional pursuits are centered around leveraging technology to improve energy usage and promote sustainable practices.</p>
-        </section>
-    </div>
 
-    <div class="container" id="projects">
-        <section>
-            <h2><b>Personal Projects</b></h2>
-            <div id="carouselProjects" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./pictures/portfolio/AG1.png" class="d-block w-100" alt="Air Quality Relay">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./pictures/portfolio/AQR1.png" class="d-block w-100" alt="Automated Greenhouse">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./pictures/portfolio/LG1.png" class="d-block w-100" alt="Lego 3D Printer">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./pictures/portfolio/ML1.png" class="d-block w-100" alt="Hand Gesture Controlled Mouse Application">
+    
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Sidebar Column -->
+                <div class="col-md-3">
+                    <div class="sidebar" >
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a href="#about-me" class="nav-link">About Me</a></li>
+                            <li class="nav-item"><a href="#projects" class="nav-link">Personal Projects</a></li>
+                            <li class="nav-item"><a href="#work" class="nav-link">Work Experience</a></li>
+                            <li class="nav-item"><a href="#cert" class="nav-link">Certifications</a></li>
+                            <li class="nav-item"><a href="#pub" class="nav-link">Publications</a></li>
+                        </ul>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-target="#carouselProjects1" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-target="#carouselProjects1" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </section>
-    </div>
+                <!-- Main Content Column -->
+                <div class="col-md-9">
+                    <section id="about-me">
+                        <h2><b>About Me</b></h2>
+                        <p>
+                            Hello! I’m Zain Mahmoud, a second-year Mechatronics Engineering student at the University of Waterloo. 
+                            My journey in engineering is fueled by a deep curiosity about how things work and a passion for problem-solving. Coming from a background in Electromechanical Engineering Technology at George Brown College, 
+                            I found my love for seamlessly integrating mechanical and electrical systems.
+                        </p>
+                        <p>                        
+                            While my primary focus is mechatronics, I have a particular affinity for software development. 
+                            I find immense joy in crafting elegant code and creating software solutions that streamline processes and enhance 
+                            efficiency. My interest in software extends beyond coursework; I often spend my free time exploring new programming
+                            languages and experimenting with different technologies.
+                        </p>
+                        <p>
+                            Driven by a desire to learn and improve every day, I am committed to expanding my skill set and staying 
+                            updated with the latest advancements in engineering and technology. My ultimate goal is to leverage my 
+                            diverse skill set to make meaningful contributions to projects that push the boundaries of innovation.
+                        </p>
+                        <p>
+                            Beyond technical pursuits, I am dedicated to fostering collaboration and teamwork. 
+                            I believe in the power of collective effort and strive to create a positive and inclusive environment 
+                            where everyone's ideas are valued.
+                        </p>
+                        <p>
+                            I am excited about the opportunities that lie ahead and am eager to contribute my expertise in software development and 
+                            mechatronics to create innovative solutions that make a difference in the world. Let’s connect and explore how we can work 
+                            together to drive positive change through technology!
+                        </p>
 
-    <div class="container" id="work">
-        <section>
-            <h2><b>Work Experience</b></h2>
-            <div id="carouselWork" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./pictures/portfolio/AG1.png" class="d-block w-100" alt="Air Quality Relay">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./pictures/portfolio/AQR1.png" class="d-block w-100" alt="Automated Greenhouse">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./pictures/portfolio/LG1.png" class="d-block w-100" alt="Lego 3D Printer">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./pictures/portfolio/ML1.png" class="d-block w-100" alt="Hand Gesture Controlled Mouse Application">
-                    </div>
+                    </section>
+
+                    <section id="projects">
+                        <h2><b>Personal Projects</b></h2>
+                        <p>
+                            Welcome to my personal projects portfolio! Here, you'll find a curated selection of projects that showcase my skills and passion for 
+                            engineering and software development. Each project represents a unique challenge I've tackled, demonstrating my ability to innovate, 
+                            problem-solve, and deliver high-quality solutions. From developing autonomous robots to creating web applications, my projects reflect 
+                            my diverse interests and commitment to continuous learning. Explore below to see how I've applied my expertise to real-world problems and 
+                            brought my ideas to life.
+                        </p>
+                        <div id="carouselProjects" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./pictures/portfolio/AG1.png" class="d-block w-100" alt="Air Quality Relay">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./pictures/portfolio/AQR1.png" class="d-block w-100" alt="Automated Greenhouse">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./pictures/portfolio/LG1.png" class="d-block w-100" alt="Lego 3D Printer">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./pictures/portfolio/ML1.png" class="d-block w-100" alt="Hand Gesture Controlled Mouse Application">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-target="#carouselProjects" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-target="#carouselProjects" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </section>
+
+                    <section id="work">
+                        <h2><b>Work Experience</b></h2>
+                        <p>
+                            In my journey through various roles and industries, I've had the privilege to work on impactful projects and 
+                            collaborate with talented teams. From mechanical design to software engineering, each position has shaped my 
+                            professional growth and reinforced my commitment to excellence. Whether designing intricate systems or writing 
+                            efficient code, I bring a passion for innovation and a drive to exceed expectations. Dive into my work experience 
+                            below to learn more about the projects I've contributed to and the skills I've honed along the way.
+                        </p>
+                        
+
+                        <div id="carouselWork" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./pictures/work/electrium_mobility_logo.jpeg" class="d-block w-100" alt="Air Quality Relay">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./pictures/work/Home-Depot-Logo.jpg" class="d-block w-100" alt="Automated Greenhouse" >
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./pictures/work/leslie.jpeg" class="d-block w-100" alt="Lego 3D Printer">
+                                </div>
+                        
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-target="#carouselWork" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-target="#carouselWork" data-slide="next">
+                                <span the="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </section>
+
+
+                    <section id="cert">
+                        <h2><b>Certifications</b></h2>
+                        <p>
+                            In my journey through various roles and industries, I've had the privilege to work on impactful projects and 
+                            collaborate with talented teams. From mechanical design to software engineering, each position has shaped my 
+                            professional growth and reinforced my commitment to excellence. Whether designing intricate systems or writing 
+                            efficient code, I bring a passion for innovation and a drive to exceed expectations. Dive into my work experience 
+                            below to learn more about the projects I've contributed to and the skills I've honed along the way.
+                        </p>
+                    </section>
+
+                    <section id="pub">
+                        <h2><b>Publications</b></h2>
+                        <h3><b>Integration of Machine Learning in Robotics (Ongoing)</b></h3>
+                        <p>
+                            This publication explores the symbiotic relationship between robotics and machine learning, delving into how 
+                            advanced ML techniques enhance robotic systems' capabilities in perception, motion planning, and control. It 
+                            showcases real-world applications where ML algorithms improve autonomy, adaptability, and efficiency in diverse 
+                            robotic tasks.
+                        </p>
+
+                        <h3><b>Multi-Robot Collaboration and Coordination</b></h3>
+                        <p>
+                            This research investigates methodologies to orchestrate collaborative efforts among multiple robots, 
+                            focusing on decentralized decision-making, task allocation, and cooperative control. It examines the advantages 
+                            of employing multi-robot systems in dynamic environments, highlighting their scalability, robustness, and ability 
+                            to achieve complex objectives efficiently.
+                        </p>
+
+                        <h3><b>Human-Robot Interaction and Collaboration</b></h3>
+                        <p>
+                            This publication explores the design and implementation of intuitive interfaces that facilitate seamless 
+                            interaction between humans and robots in shared environments. It discusses techniques for understanding human 
+                            commands, recognizing gestures, and inferring intentions, emphasizing the importance of user-centric design 
+                            principles and user studies in creating effective human-robot collaboration systems.
+                        </p>
+
+
+                    </section>
                 </div>
-                <button class="carousel-control-prev" type="button" data-target="#carouselProjects1" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-target="#carouselProjects1" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
-        </section>
+        </div>
     </div>
-
-</div>
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -110,3 +193,5 @@
     <script src="index.js"></script>
 </body>
 </html>
+
+
