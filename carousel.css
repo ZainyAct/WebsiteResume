@@ -32,7 +32,7 @@
       overflow: hidden; }
       #carousel-wrapper #menu #current-option #current-option-text1 {
         font-size: 1.6rem;
-        line-height: 3rem;
+        line-height: 2rem;
         width: 220px;
         height: 200px;
         display: flex;
@@ -61,6 +61,7 @@
           justify-content: flex-start; }
       #carousel-wrapper #menu #current-option #current-option-text2 {
         font-size: 0.8rem;
+        line-height: 1.2rem;
         width: 220px;
         height: 40px;
         display: flex;
@@ -118,28 +119,28 @@
     transform: translate(140px, 0); }
   #carousel-wrapper.anim-next {
     pointer-events: none; }
-    #carousel-wrapper.anim-next #current-option-text1 {
-      animation: next-text 0.65s 0.085s; }
-    #carousel-wrapper.anim-next #curr\\\\\ent-option-text2 {
-      animation: next-text 0.65s 0.085s; }
-    #carousel-wrapper.anim-next #previous-option {
-      animation: next-top-arrow 0.65s 0.085s; }
-    #carousel-wrapper.anim-next #next-option {
-      animation: next-bottom-arrow 0.65s 0.085s; }
-    #carousel-wrapper.anim-next #image {
-      animation: next-image 0.65s 0.085s; }
-  #carousel-wrapper.anim-previous {
-    pointer-events: none; }
-    #carousel-wrapper.anim-previous #current-option-text1 {
-      animation: previous-text 0.65s 0.085s; }
-    #carousel-wrapper.anim-previous #current-option-text2 {
-      animation: previous-text 0.65s 0.085s; }
-    #carousel-wrapper.anim-previous #previous-option {
-      animation: previous-top-arrow 0.65s 0.085s; }
-    #carousel-wrapper.anim-previous #next-option {
-      animation: previous-bottom-arrow 0.65s 0.085s; }
-    #carousel-wrapper.anim-previous #image {
-      animation: previous-image 0.65s 0.085s; }
+#carousel-wrapper.anim-next #current-option-text1 {
+  animation: next-text 0.65s 0.085s; }
+#carousel-wrapper.anim-next #current-option-text2 {
+  animation: next-text 0.65s 0.085s; }
+#carousel-wrapper.anim-next #previous-option {
+  animation: next-top-arrow 0.65s 0.085s; }
+#carousel-wrapper.anim-next #next-option {
+  animation: next-bottom-arrow 0.65s 0.085s; }
+#carousel-wrapper.anim-next #image {
+  animation: next-image 0.65s 0.085s; }
+#carousel-wrapper.anim-previous {
+  pointer-events: none; }
+#carousel-wrapper.anim-previous #current-option-text1 {
+  animation: previous-text 0.65s 0.085s; }
+#carousel-wrapper.anim-previous #current-option-text2 {
+  animation: previous-text 0.65s 0.085s; }
+#carousel-wrapper.anim-previous #previous-option {
+  animation: previous-top-arrow 0.65s 0.085s; }
+#carousel-wrapper.anim-previous #next-option {
+  animation: previous-bottom-arrow 0.65s 0.085s; }
+#carousel-wrapper.anim-previous #image {
+  animation: previous-image 0.65s 0.085s; }
 
 @keyframes previous-text {
   50%,
@@ -194,3 +195,20 @@
     opacity: 1; } }
 
 
+.fade-in-text {
+  animation: fadeInText 1s ease forwards;
+}
+
+.fade-in-image {
+    animation: fadeInImage 1s ease forwards;
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInImage {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
