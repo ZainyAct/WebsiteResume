@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height =device-height, initial-scale=1.0">
     <title>Zain's Website Resume</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -23,18 +23,11 @@
         <img id="yellow" class="splotch" src="https://i.ibb.co/Bz4FR2V/9-97730-gold-paint-splatter-png-yellow-watercolor-splash-png.png" />
         <img id="pink" class="splotch" src="https://i.ibb.co/fGj59kP/1079553.png"/>
         <img id="black" class="splotch" src="https://i.ibb.co/QPz04gJ/paint-splatter-transparent-background-6.png"/>
-        
-        <img id="red2" class="splotch" src="https://i.ibb.co/fpW25qW/k-T85j4e-Rc.png"/>
-        <img id="blue2" class="splotch" src="https://i.ibb.co/Brw1B69/8-TGb-Xexzc.png" />
-        <img id="yellow2" class="splotch" src="https://i.ibb.co/Bz4FR2V/9-97730-gold-paint-splatter-png-yellow-watercolor-splash-png.png" />
-        <img id="pink2" class="splotch" src="https://i.ibb.co/fGj59kP/1079553.png"/>
-        <img id="black2" class="splotch" src="https://i.ibb.co/QPz04gJ/paint-splatter-transparent-background-6.png"/>
-        
 
 
     
         <div class="container-fluid">
-            <div class="row">=  
+            <div class="row">
                 <!-- Sidebar Column -->
                 <div class="col-md-3">
                     <div class="sidebar" >
@@ -48,8 +41,8 @@
                     </div>
                 </div>
                 <!-- Main Content Column -->
-                <div class="col-md-9" >
-                    <section id="about-me" class="mainsec">
+                <div class="col-md-9">
+                    <section class="fluid-section" id="about-me">
                         <h2>About Me</h2>
                         <p>
                             Hello! I’m Zain Mahmoud, a second-year Mechatronics Engineering student at the University of Waterloo. 
@@ -80,8 +73,8 @@
 
                     </section>
 
-                    <section id="projects" class="mainsec">
-                        <h2> Projects</h2>
+                    <section class="fluid-section" id="projects">
+                        <h2>Personal Projects</h2>
                         <p>
                             Welcome to my personal projects portfolio! Here, you'll find a curated selection of projects that showcase my skills and passion for 
                             engineering and software development. Each project represents a unique challenge I've tackled, demonstrating my ability to innovate, 
@@ -89,31 +82,6 @@
                             my diverse interests and commitment to continuous learning. Explore below to see how I've applied my expertise to real-world problems and 
                             brought my ideas to life.
                         </p>
-
-                        <div class="carousel-container" id="carousel-wrapper">
-                            <div id="menu">
-                            <div id="current-option">
-                            <span id="current-option-text1" data-previous-text="" data-next-text=""></span>
-                            <span id="current-option-text2" data-previous-text="" data-next-text=""></span>
-                            </div>
-                            <button id="previous-option"></button>
-                            <button id="next-option"></button>
-                        </div>
-                        <div id="image"></div>
-                        </div>
-                    </section>
-
-                    
-                    <section id="work" class="mainsec">
-                        <h2>Work Experience</h2>
-                        <p>
-                            In my journey through various roles and industries, I've had the privilege to work on impactful projects and 
-                            collaborate with talented teams. From mechanical design to software engineering, each position has shaped my 
-                            professional growth and reinforced my commitment to excellence. Whether designing intricate systems or writing 
-                            efficient code, I bring a passion for innovation and a drive to exceed expectations. Dive into my work experience 
-                            below to learn more about the projects I've contributed to and the skills I've honed along the way.
-                        </p>
-                        
                         <div id="carousel-wrapper" class="carousel-container">
                             <div id="menu">
                                 <div id="current-option">
@@ -128,29 +96,66 @@
 
                     </section>
 
-                    <section id="cert" class="mainsec">
-                        <h2>Certifications</h2>
-                        <h3>Azure AI Fundamentals (AI-900)</h3>
+                    <section class="fluid-section" id="work">
+                        <h2><b>Work Experience</b></h2>
                         <p>
-                            As a passionate robotics engineer, I pursued the Azure AI Fundamentals certification to deepen my 
-                            understanding of artificial intelligence (AI) and machine learning (ML) concepts within the context 
-                            of Microsoft Azure. This certification not only validates my foundational knowledge of AI and ML but 
-                            also showcases my commitment to staying at the forefront of emerging technologies. With this certification, 
-                            I aim to leverage AI and ML capabilities on Azure to enhance robotics applications and drive innovation in 
-                            the field.
+                            In my journey through various roles and industries, I've had the privilege to work on impactful projects and 
+                            collaborate with talented teams. From mechanical design to software engineering, each position has shaped my 
+                            professional growth and reinforced my commitment to excellence. Whether designing intricate systems or writing 
+                            efficient code, I bring a passion for innovation and a drive to exceed expectations. Dive into my work experience 
+                            below to learn more about the projects I've contributed to and the skills I've honed along the way.
                         </p>
-                        <h3>Azure Fundamentals (AZ-900)</h3>
+                    
+                        
+
+                        <div id="carousel-wrapper" class="carousel-container">
+                            <div id="menu">
+                                <div id="current-option">
+                                <span id="current-option-text1" data-previous-text="" data-next-text=""></span>
+                                <span id="current-option-text2" data-previous-text="" data-next-text=""></span>
+                                </div>
+                                <button id="previous-option"></button>
+                                <button id="next-option"></button>
+                            </div>
+                            <div id="image"></div>
+                        </div>
+
+                    </section>
+
+
+                    <section class="fluid-section" id="cert">
+                        <h2>Certifications</h2>
+                        <h3>AutoCAD Certification (Ongoing)</h3>
                         <p>
-                            Recognizing the pivotal role of cloud services in modern engineering, I embarked on the journey to obtain the 
-                            Azure Fundamentals certification. By gaining insights into core Azure services and understanding cloud 
-                            concepts, I am equipped with the foundational knowledge needed to integrate cloud solutions seamlessly into 
-                            robotics projects. This certification reflects my dedication to continuous learning and my aspiration to 
-                            harness the power of Azure to optimize robotics systems and contribute meaningfully to the advancement of 
-                            technology.
+                            AutoCAD Certification (Studying for it):
+                            Currently preparing for AutoCAD Certification, a widely recognized credential in computer-aided design (CAD). 
+                            Studying proficient use of AutoCAD software to create precise 2D and 3D drawings for architectural, engineering, 
+                            and construction projects. Acquiring skills in drafting, dimensioning, and annotation to accurately communicate 
+                            design concepts. Dedicated to mastering AutoCAD tools and techniques to enhance productivity and efficiency in 
+                            design workflows.
+                        </p>
+
+                        <h3>Azure AI Fundamentals (AI 900)</h3>
+                        <p>
+                            Azure AI Fundamentals (AI 900) certification validates foundational knowledge of 
+                            artificial intelligence (AI) concepts and Azure AI services on Microsoft Azure. Demonstrating 
+                            understanding of fundamental AI principles, including machine learning, natural language processing (NLP), 
+                            computer vision, and conversational AI. Proficiency in leveraging Azure AI services such as Azure Cognitive 
+                            Services and Azure Machine Learning to develop AI solutions. Equipped with essential skills to explore AI 
+                            capabilities and contribute to AI-driven innovations.
+                        </p>
+
+                        <h3>Azure Fundamentals (AZ 900)</h3>
+                        <p>
+                            Azure Fundamentals (AZ 900) certification verifies basic knowledge of cloud concepts and services provided by 
+                            Microsoft Azure. Demonstrating understanding of core Azure services, including compute, storage, networking, and 
+                            security. Familiarity with Azure pricing, support, and service level agreements (SLAs). Acquiring foundational 
+                            skills in cloud computing to deploy and manage Azure resources effectively. Prepared to explore further Azure 
+                            certifications and pursue cloud-related career opportunities.
                         </p>
                     </section>
 
-                    <section id="pub" class="mainsec">
+                    <section class="fluid-section" id="pub">
                         <h2>Publications</h2>
                         <h3>Integration of Machine Learning in Robotics (Ongoing)</h3>
                         <p>
@@ -160,7 +165,7 @@
                             robotic tasks.
                         </p>
 
-                        <h3>Multi-Robot Collaboration and Coordination (Ongoing)</h3>
+                        <h3>Multi-Robot Collaboration and Coordination</h3>
                         <p>
                             This research investigates methodologies to orchestrate collaborative efforts among multiple robots, 
                             focusing on decentralized decision-making, task allocation, and cooperative control. It examines the advantages 
@@ -168,7 +173,7 @@
                             to achieve complex objectives efficiently.
                         </p>
 
-                        <h3>Human-Robot Interaction and Collaboration (Ongoing)</h3>
+                        <h3>Human-Robot Interaction and Collaboration</h3>
                         <p>
                             This publication explores the design and implementation of intuitive interfaces that facilitate seamless 
                             interaction between humans and robots in shared environments. It discusses techniques for understanding human 
@@ -179,9 +184,9 @@
 
                     </section>
                 </div>
-                </div>
             </div>
         </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -189,4 +194,5 @@
     <script src="index.js"></script>
 </body>
 </html>
+
 
