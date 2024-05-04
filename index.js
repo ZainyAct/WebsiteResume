@@ -44,109 +44,192 @@ $(window).scroll(function() {
 
 //Carousel - Personal Projects
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+/*
 class Carousel {
-    constructor(containerId, work) {
-        this.containerId = containerId;
-        this.work = work;
-
-        // Define options based on the work flag
-        this.text1_options = this.work ? [
-            "Revolutionizing Rehabilitation: NeuroCage",
-            "Powering Progress: Electrium",
-            "Crafting Spaces, Building Dreams: Leslieville Home Improvements",
-            "Exploring the Boundaries of Biomechatronics: UW Biomechatronics Club"
-        ] : [
-            "Breathe Easy, Think Clear: Air Quality Relay",
-            "Step into Tomorrow: HUD Glasses",
-            "Effortless Precision: Hand-Controlled Mouse",
-            "Creative Innovation: LEGO 3D Printer",
-            "Green Thumb 2.0: Automated Greenhouse"
-        ];
-
-        this.text2_options = this.work ? [
-            "Spearheaded cutting-edge projects in assistive technology, aiding in the development of innovative solutions to enhance the lives of individuals with neurological disorders.",
-            "Contributed to the advancement of electrical infrastructure through meticulous quality control and project management, ensuring seamless operations for critical systems.",
-            "Played a pivotal role in transforming visions into reality, overseeing various facets of residential construction projects with a keen eye for detail and craftsmanship.",
-            "Engaged in hands-on experimentation with cutting-edge technology, leveraging ESP32's and EMG fabric to decode neural signals, enabling real-time control of our bespoke artificial hand using precision actuators."
-        ] : [
-            "Keep your surroundings crisp and clean with this innovative device, ensuring optimal air quality wherever you roam.",
-            "Dive into a world of augmented reality, where digital overlays enhance your reality seamlessly, offering endless possibilities.",
-            "Navigate your digital realm with a wave of your hand, bringing a new level of intuitive control to your computing experience.",
-            "Unleash your creativity and build the impossible with this DIY printing marvel, where your imagination knows no bounds.",
-            "Watch your garden flourish effortlessly with smart automation, bringing sustainable gardening to the next level."
-        ];
-
-        this.color_options = ["#EBB9D2", "#FE9968", "#7FE0EB", "#6CE5B1"];
-        this.image_options = [
-            "pictures/portfolio/AQR1.png",
-            "pictures/portfolio/DefaultImage.png",
-            "pictures/portfolio/ML1.png",
-            "pictures/portfolio/LG1.png",
-            "pictures/portfolio/AG1.png"
-        ] ; [
-            "pictures/portfolio/AQR1.png",
-            "pictures/portfolio/DefaultImage.png",
-            "pictures/portfolio/ML1.png",
-            "pictures/portfolio/LG1.png",
-            "pictures/portfolio/AG1.png"
-        ];
-
-        this.i = 0;
-        this.initializeCarousel();
-        this.i = 0;
-        this.initializeCarousel();
+    constructor(containerId, options) {
+        this.container = document.getElementById(containerId);
+        if (!this.container) {
+            console.error(`Carousel container with ID ${containerId} not found.`);
+            return;
+        }
+        this.options = options;
+        this.currentIndex = 0;
+        this.initCarousel();
     }
 
-    initializeCarousel() {
-        const carouselElement = document.getElementById(this.containerId);
-        if (!carouselElement) return; // Check if the element exists
+    initCarousel() {
+        this.renderCarousel();
+        this.attachEventListeners();
+    }
 
-        // Setup HTML structure inside the carousel container
-        carouselElement.innerHTML = `
-            <div id="menu-${this.containerId}" class="menu">
-                <div id="current-option-text1-${this.containerId}" class="current-option-text"></div>
-                <div id="current-option-text2-${this.containerId}" class="current-option-text"></div>
-                <div id="image-${this.containerId}" class="image"></div>
-                <button id="previous-option-${this.containerId}" class="carousel-button">Previous</button>
-                <button id="next-option-${this.containerId}" class="carousel-button">Next</button>
+    renderCarousel() {
+        this.container.innerHTML = `
+            <div class="carousel-content">
+                <div class="image" id="image-${this.container.id}" style="background-image: url('${this.options.images[this.currentIndex]}');"></div>
+                <div class="text-content">
+                    <span class="current-option-text" id="current-option-text1-${this.container.id}">${this.options.text1[this.currentIndex]}</span>
+                    <span class="current-option-text" id="current-option-text2-${this.container.id}">${this.options.text2[this.currentIndex]}</span>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-button" id="previous-option-${this.container.id}">&#9664; Previous</button>
+                    <button class="carousel-button" id="next-option-${this.container.id}">Next &#9654;</button>
+                </div>
             </div>
         `;
-
-        const currentOptionText1 = document.getElementById(`current-option-text1-${this.containerId}`);
-        const currentOptionText2 = document.getElementById(`current-option-text2-${this.containerId}`);
-        const currentOptionImage = document.getElementById(`image-${this.containerId}`);
-        const previousOption = document.getElementById(`previous-option-${this.containerId}`);
-        const nextOption = document.getElementById(`next-option-${this.containerId}`);
-
-
-        // Bind navigation buttons
-        document.getElementById(`next-option-${this.containerId}`).addEventListener('click', () => this.navigateNext());
-        document.getElementById(`previous-option-${this.containerId}`).addEventListener('click', () => this.navigatePrevious());
-
-        // Update UI with initial data
-        this.updateUI();
     }
 
-    navigateNext() {
-        this.i = (this.i + 1) % this.text1_options.length;
-        this.updateUI();
+    attachEventListeners() {
+        document.getElementById(`next-option-${this.container.id}`).addEventListener('click', () => this.navigate(1));
+        document.getElementById(`previous-option-${this.container.id}`).addEventListener('click', () => this.navigate(-1));
     }
 
-    navigatePrevious() {
-        this.i = (this.i - 1 + this.text1_options.length) % this.text1_options.length;
-        this.updateUI();
+    navigate(direction) {
+        this.updateIndex(direction);
+        this.updateCarousel(direction);
     }
 
-    updateUI() {
-        document.getElementById(`current-option-text1-${this.containerId}`).innerText = this.text1_options[this.i];
-        document.getElementById(`current-option-text2-${this.containerId}`).innerText = this.text2_options[this.i];
-        document.getElementById(`image-${this.containerId}`).style.backgroundImage = `url(${this.image_options[this.i]})`;
-        document.getElementById(`menu-${this.containerId}`).style.background = this.color_options[this.i];
+    updateIndex(direction) {
+        this.currentIndex += direction;
+        if (this.currentIndex < 0) this.currentIndex = this.options.text1.length - 1;
+        if (this.currentIndex >= this.options.text1.length) this.currentIndex = 0;
+    }
+
+    updateCarousel(direction) {
+        const image = document.getElementById(`image-${this.container.id}`);
+        const text1 = document.getElementById(`current-option-text1-${this.container.id}`);
+        const text2 = document.getElementById(`current-option-text2-${this.container.id}`);
+
+        text1.innerText = this.options.text1[this.currentIndex];
+        text2.innerText = this.options.text2[this.currentIndex];
+        image.style.backgroundImage = `url('${this.options.images[this.currentIndex]}')`;
+
+        // Remove existing animations
+        image.classList.remove('anim-next', 'anim-previous');
+        text1.classList.remove('anim-next', 'anim-previous');
+        text2.classList.remove('anim-next', 'anim-previous');
+
+        // Add new animation based on direction
+        const animationClass = direction === 1 ? 'anim-next' : 'anim-previous';
+        image.classList.add(animationClass);
+        text1.classList.add(animationClass);
+        text2.classList.add(animationClass);
+    }
+}
+    const workOptions = {
+        text1: ["Revolutionizing Rehabilitation: NeuroCage", "Powering Progress: Electrium", "Crafting Spaces, Building Dreams: Leslieville Home Improvements", "Exploring the Boundaries of Biomechatronics: UW Biomechatronics Club"],
+        text2: ["Spearheaded cutting-edge projects in assistive technology, aiding in the development of innovative solutions to enhance the lives of individuals with neurological disorders.", "Contributed to the advancement of electrical infrastructure through meticulous quality control and project management, ensuring seamless operations for critical systems.", "Played a pivotal role in transforming visions into reality, overseeing various facets of residential construction projects with a keen eye for detail and craftsmanship.", "Engaged in hands-on experimentation with cutting-edge technology, leveraging ESP32's and EMG fabric to decode neural signals, enabling real-time control of our bespoke artificial hand using precision actuators."],
+        images: ["./pictures/work/NC.jpg", "./pictures/work/electrium_mobility_logo.jpeg", "./pictures/work/leslie.jpeg", "./pictures/work/BT.png"],
+        colors: ["#EBB9D2", "#FE9968", "#7FE0EB"]
+    };
+
+    const projOptions = {
+        text1: ["Breathe Easy, Think Clear: Air Quality Relay", "Step into Tomorrow: HUD Glasses", "Effortless Precision: Hand-Controlled Mouse", "Creative Innovation: LEGO 3D Printer", "Green Thumb 2.0: Automated Greenhouse"],
+        text2: ["Keep your surroundings crisp and clean with this innovative device, ensuring optimal air quality wherever you roam.", "Dive into a world of augmented reality, where digital overlays enhance your reality seamlessly, offering endless possibilities.", "Navigate your digital realm with a wave of your hand, bringing a new level of intuitive control to your computing experience.", "Unleash your creativity and build the impossible with this DIY printing marvel, where your imagination knows no bounds.", "Watch your garden flourish effortlessly with smart automation, bringing sustainable gardening to the next level."],
+        images: ["./pictures/portfolio/AQR1.png", "./pictures/portfolio/DefaultImage.png", "./pictures/portfolio/ML1.png", "./pictures/portfolio/LG1.png", "./pictures/portfolio/AG1.png"],
+        colors: ["#6CE5B1", "#D4E157", "#29B6F6"]
+    };
+
+new Carousel('projCarousel', projOptions);
+new Carousel('workCarousel', workOptions);
+*/
+
+
+const projectsData = {
+    text1: ["Revolutionizing Rehabilitation: NeuroCage", "Powering Progress: Electrium", "Crafting Spaces, Building Dreams: Leslieville Home Improvements", "Exploring the Boundaries of Biomechatronics: UW Biomechatronics Club"],
+    text2: ["Spearheaded cutting-edge projects in assistive technology, aiding in the development of innovative solutions to enhance the lives of individuals with neurological disorders.", "Contributed to the advancement of electrical infrastructure through meticulous quality control and project management, ensuring seamless operations for critical systems.", "Played a pivotal role in transforming visions into reality, overseeing various facets of residential construction projects with a keen eye for detail and craftsmanship.", "Engaged in hands-on experimentation with cutting-edge technology, leveraging ESP32's and EMG fabric to decode neural signals, enabling real-time control of our bespoke artificial hand using precision actuators."],
+    color: ["#EBB9D2", "#FE9968", "#7FE0EB"],
+    image: ["./pictures/work/NC.jpg", "./pictures/work/electrium_mobility_logo.jpeg", "./pictures/work/leslie.jpeg", "./pictures/work/BT.png"]
+};
+const workData = {
+    text1: ["Breathe Easy, Think Clear: Air Quality Relay", "Step into Tomorrow: HUD Glasses", "Effortless Precision: Hand-Controlled Mouse", "Creative Innovation: LEGO 3D Printer", "Green Thumb 2.0: Automated Greenhouse"],
+    text2: ["Keep your surroundings crisp and clean with this innovative device, ensuring optimal air quality wherever you roam.", "Dive into a world of augmented reality, where digital overlays enhance your reality seamlessly, offering endless possibilities.", "Navigate your digital realm with a wave of your hand, bringing a new level of intuitive control to your computing experience.", "Unleash your creativity and build the impossible with this DIY printing marvel, where your imagination knows no bounds.", "Watch your garden flourish effortlessly with smart automation, bringing sustainable gardening to the next level."],
+    image: ["./pictures/portfolio/AQR1.png", "./pictures/portfolio/DefaultImage.png", "./pictures/portfolio/ML1.png", "./pictures/portfolio/LG1.png", "./pictures/portfolio/AG1.png"],
+    color: ["#6CE5B1", "#D4E157", "#29B6F6"]
+};
+
+function updateCarousel(containerElement, text1Data, text2Data, imageData, colorData) {
+    let i = 0; 
+    const currentOptionText1 = containerElement.querySelector("#current-option-text1"); // Get elements within the carousel container
+    const currentOptionText2 = containerElement.querySelector("#current-option-text2");
+    const currentOptionImage = containerElement.querySelector("#image");
+    const carousel = containerElement.querySelector("#carousel-wrapper");
+    const mainMenu = containerElement.querySelector("#menu");
+    const optionPrevious = containerElement.querySelector("#previous-option");
+    const optionNext = containerElement.querySelector("#next-option");
+
+    currentOptionText1.innerText = text1Data[i]; 
+    currentOptionText2.innerText = text2Data[i];
+    currentOptionImage.style.backgroundImage = "url(" + imageData[i] + ")";
+    mainMenu.style.background = colorData[i];
+
+    optionNext.onclick = function () {
+    i = i + 1;
+    i = i % text1Data.length;
+    currentOptionText1.dataset.nextText = text1Data[i];
+
+    currentOptionText2.dataset.nextText = text2Data[i];
+
+    mainMenu.style.background = colorData[i];
+    carousel.classList.add("anim-next");
+
+    setTimeout(() => {
+    currentOptionImage.style.backgroundImage = "url(" + imageData[i] + ")";
+    }, 455);
+
+    setTimeout(() => {
+    currentOptionText1.innerText = text1Data[i];
+    currentOptionText2.innerText = text2Data[i];
+    carousel.classList.remove("anim-next");
+    }, 650);
+    };
+
+    optionPrevious.onclick = function () {
+    if (i === 0) {
+    i = text1Data.length;
+    }
+    i = i - 1;
+    currentOptionText1.dataset.previousText = text1Data[i];
+
+    currentOptionText2.dataset.previousText = text2Data[i];
+
+    mainMenu.style.background = colorData[i];
+    carousel.classList.add("anim-previous");
+
+    setTimeout(() => {
+    currentOptionImage.style.backgroundImage = "url(" + imageData[i] + ")";
+    }, 455);
+
+    setTimeout(() => {
+    currentOptionText1.innerText = text1Data[i];
+    currentOptionText2.innerText = text2Data[i];
+    carousel.classList.remove("anim-previous");
+    }, 650);
     }
 }
 
+// Event Listener for Scrolling
+window.addEventListener('scroll', function() {
+    const projectsSection = document.getElementById('projects');
+    const workSection = document.getElementById('work');
 
-const workCarousel = new Carousel('workCarousel', true);
-const projCarousel = new Carousel('projCarousel', false);
+    if (isSectionInView(projectsSection)) {
+    const projectsCarousel = projectsSection.querySelector('.carousel-container');
+    updateCarousel(projectsCarousel, projectsData.text1, projectsData.text2, projectsData.image, projectsData.color); 
+}
+
+if (isSectionInView(workSection)) {
+    const workCarousel = workSection.querySelector('.carousel-container');
+    updateCarousel(workCarousel, workData.text1, workData.text2, workData.image, workData.color);       
+}
+});
+
+// Helper function to check if a section is in view
+function isSectionInView(section) {
+const rect = section.getBoundingClientRect();
+return (
+    rect.top >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+);
+}
+
 

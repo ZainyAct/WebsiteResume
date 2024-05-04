@@ -1,4 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins|Lato|Roboto+Mono&display=swap");
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: #d3979a;
+  font-family: "Helvetica Neue", "Roboto Mono", "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
+* {
+  box-sizing: border-box;
+  outline: none;
+  user-select: none; }
 
 #carousel-wrapper {
   width: auto;

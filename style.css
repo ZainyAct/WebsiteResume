@@ -96,6 +96,10 @@ li {
     margin: 5px 0;
 }
 
+a {
+    color: white;
+}
+
 /* Header and footer common styling */
 header, footer {
     background-color: #222;
@@ -180,7 +184,7 @@ header, footer {
     font-weight: bold;
     font-size: 24px;
     text-align: center;
-}
+}\\\\\\\\\\\\\\\\
 
 .mainsec h3 {
     font-size: 18px;
