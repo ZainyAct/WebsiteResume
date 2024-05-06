@@ -48,14 +48,14 @@ var projectsData, workData;
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize data
-    projectsData = {
+    workData = {
         text1: ["Revolutionizing Rehabilitation: NeuroCage", "Powering Progress: Electrium", "Built to Last: Leslieville Home Improvements", "Giving a Hand: Biomechatronics Design Team"],
         text2: ["Spearheaded cutting-edge projects in assistive technology, aiding in the development of innovative solutions to enhance the lives of individuals with neurological disorders.", "Contributed to the advancement of electrical infrastructure through meticulous quality control and project management, ensuring seamless operations for critical systems.", "Enhanced residential construction with integrated software, electrical, and mechanical solutions, ensuring superior functionality and comfort in every build.", "Engaged in hands-on experimentation with cutting-edge technology, leveraging ESP32's and EMG fabric to decode neural signals, enabling real-time control of our bespoke artificial hand using precision actuators."],
         color: ["#FF8A80","#C5CAE9","#FFD54F","#81C784"],
         image: ["./pictures/work/NC.jpg", "./pictures/work/electrium_mobility_logo.jpeg", "./pictures/work/leslie.jpeg", "./pictures/work/BT.png"]
     };
 
-    workData = {
+    projectsData = {
         text1: ["Breathe Easy, Think Clear: Air Quality Relay", "Step into Tomorrow: HUD Glasses", "Effortless Precision: Hand-Controlled Mouse", "Creative Innovation: LEGO 3D Printer", "Green Thumb 2.0: Automated Greenhouse"],
         text2: ["Keep your surroundings crisp and clean with this innovative device, ensuring optimal air quality wherever you roam.", "Dive into a world of augmented reality, where digital overlays enhance your reality seamlessly, offering endless possibilities.", "Navigate your digital realm with a wave of your hand, bringing a new level of intuitive control to your computing experience.", "Unleash your creativity and build the impossible with this DIY printing marvel, where your imagination knows no bounds.", "Watch your garden flourish effortlessly with smart automation, bringing sustainable gardening to the next level."],
         color: ["#FF80AB","#80CBC4","#FFD180","#B0BEC5"],
