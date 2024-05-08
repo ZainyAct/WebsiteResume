@@ -7,6 +7,10 @@ body {
     background-color: #f4f4f4; /* Light gray background color */
 }
 
+.button {
+    padding: 10px;
+}
+
 /* Styling for the main background image */
 .background-image {
     background-size: cover;
@@ -35,7 +39,7 @@ body {
     color: white;        
     padding: 15px;       
     z-index: 1000;  
-    margin-left: -400px;     
+    margin-left: auto;     
 }
 
 
@@ -81,11 +85,14 @@ section {
 }
 
 /* Styling for headings within the page */
-h1, h2, h3 {
-    font-size: 1.5rem; /* Responsive font size */
+h1{
+    font-size: 2.5rem; /* Responsive font size */
     text-align: center;
 }
-
+h2, h3 {
+    font-size: 2rem;
+    text-align: center;
+}
 /* Utility classes for lists */
 ul {
     list-style-type: none;
