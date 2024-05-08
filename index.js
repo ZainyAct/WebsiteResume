@@ -147,3 +147,27 @@ function updateCarousel(containerElement, text1Data, text2Data, imageData, color
         }, 100); // Delay updates slightly to allow CSS to recognize the class change
     }
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+const sections = document.querySelectorAll('section');
+const navList = document.querySelector('.nav-item nav ul li');
+
+window.addEventListener('scroll', () => {
+    let current ='';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if(scrollY>=sectionTop){
+            current = section.getAttribute('id');
+        }
+    })
+
+    navList.forEach( li => {
+        li.href.remove('active');
+        if(li.href.contains(current)){
+            li.classList.add('active');
+        }
+    })
+});

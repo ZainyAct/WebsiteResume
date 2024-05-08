@@ -58,6 +58,17 @@ body {
     padding: 10px;
     text-align: center;
 }
+.sidebar nav ul li {
+    color: white;
+    text-decoration: none;
+    display: block; /* Full width links for easier clicking */
+    padding: 10px;
+    text-align: center;
+}
+.nav-item nav ul li.active {
+    color: rgb(199, 24, 24);
+    transition: 0.3 ease background-color;
+}
 
 /* General section styling for content areas */
 section {
