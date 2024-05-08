@@ -1,15 +1,23 @@
 /* General reset and background styling */
-body {
+body{
     text-align: center;
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     background-color: #f4f4f4; /* Light gray background color */
+    width: 100vw;
+    height: 100vh;
+}
+
+.container canvas {
+    width: 100%;
+    height: 100%;
 }
 
 .button {
     padding: 10px;
 }
+
 
 /* Styling for the main background image */
 .background-image {
@@ -31,14 +39,13 @@ body {
 .sidebar {
     position: sticky;    
     top: 0;     
-    left: 0;         
-    width: 200px;        
+    left: 0 auto;         
+    width: 100%;        
     height: 100vh;       
     overflow-y: auto;    
     background-color: #106fdb;  
     color: white;        
     padding: 15px;       
-    z-index: 1000;  
     margin-left: auto;     
 }
 
