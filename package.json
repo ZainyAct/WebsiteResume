@@ -1,0 +1,33 @@
+{
+  "name": "resume-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZainyAct/WebsiteResume.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZainyAct/WebsiteResume/issues"
+  },
+  "homepage": "https://github.com/ZainyAct/WebsiteResume#readme",
+  "devDependencies": {
+    "@aws-amplify/backend": "^1.0.1",
+    "@aws-amplify/backend-cli": "^1.0.2",
+    "aws-cdk": "^2.141.0",
+    "aws-cdk-lib": "^2.141.0",
+    "constructs": "^10.3.0",
+    "esbuild": "^0.21.1",
+    "tsx": "^4.9.3",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "aws-amplify": "^6.3.0"
+  }
+}
